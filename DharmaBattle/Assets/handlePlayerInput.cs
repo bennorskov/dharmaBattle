@@ -3,16 +3,19 @@ using System.Collections;
 
 public class handlePlayerInput : MonoBehaviour {
 
-	monkLines ml;
+	monkLines headML, yourML;
 	int currentLine = 0;
 	// Use this for initialization
 	void Start () {
-		ml = GameObject.Find("Head Monk").GetComponent<monkLines>();
+		headML = GameObject.Find("Head Monk").GetComponent<monkLines>();
+		yourML = GameObject.Find("You Monk").GetComponent<monkLines>();
 	}
 	public void handleTextInput(string _input) {
 		if( _input.Contains("vase") && ( _input.Contains("tip") || _input.Contains("knock") || _input.Contains("kick") ) ) {
-			ml.sayLine(currentLine);
+			headML.sayLine(currentLine);
 			currentLine++;
+		} else {
+			yourML.sayLine(_input);
 		}
 
 	}
