@@ -10,7 +10,7 @@ public class handlePlayerInput : MonoBehaviour {
 		ml = GameObject.Find("Head Monk").GetComponent<monkLines>();
 	}
 	public void handleTextInput(string _input) {
-		if( _input.Contains("vase") && ( _input.Contains("tip") || _input.Contains("knock") || _input.Contains("kick") ) {
+		if( _input.Contains("vase") && ( _input.Contains("tip") || _input.Contains("knock") || _input.Contains("kick") ) ) {
 			ml.sayLine(currentLine);
 			currentLine++;
 		}
