@@ -10,17 +10,16 @@ public class monkLines : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		textBG = targetText.GetComponentInParent<Image>();
-		print(textBG);
 	}
 
 	public void sayLine( int _lineNum) {
-		targetText.enabled = true;
+		textBG.enabled = true;
 		_lineNum %= lines.Length;
 		targetText.text = lines[_lineNum];
 		StartCoroutine("fadeText");
 	}
 	IEnumerator fadeText() {
 		yield return new WaitForSeconds(lineTimeout);
-		targetText.enabled =false;
+		textBG.enabled = false;
 	}
 }
