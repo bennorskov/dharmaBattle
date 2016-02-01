@@ -12,6 +12,10 @@ public class handlePlayerInput : MonoBehaviour {
 	}
 	public void handleTextInput(string _input) {
 		if( _input.Contains("vase") && ( _input.Contains("tip") || _input.Contains("knock") || _input.Contains("kick") ) ) {
+			//kick vase over
+			Debug.Log("You kick the vase over, proving you're more zen!");
+		}else if (_input.Contains("next") ) {
+			//display next  head monk line
 			headML.sayLine(currentLine);
 			currentLine++;
 		} else {
